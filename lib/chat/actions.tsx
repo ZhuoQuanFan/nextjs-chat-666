@@ -8,7 +8,6 @@ import {
   streamUI,
   createStreamableValue
 } from 'ai/rsc'
-import { openai } from '@ai-sdk/openai'
 
 import {
   spinner,
@@ -35,6 +34,7 @@ import { saveChat } from '@/app/actions'
 import { SpinnerMessage, UserMessage } from '@/components/stocks/message'
 import { Chat, Message } from '@/lib/types'
 import { auth } from '@/auth'
+import { createOpenAI } from '@ai-sdk/openai'
 
 async function confirmPurchase(symbol: string, price: number, amount: number) {
   'use server'
@@ -126,6 +126,10 @@ async function submitUserMessage(content: string) {
   let textStream: undefined | ReturnType<typeof createStreamableValue<string>>
   let textNode: undefined | React.ReactNode
 
+  const openai = createOpenAI({
+    baseURL: 'https://api.wlai.vip/v1/'
+    // apiKey: 'sk-YYitVcwb77QXxispAc33E9Eb1e414189B0718c1dAcD0D9F5'
+  })
   const result = await streamUI({
     model: openai('gpt-4'),
     initial: <SpinnerMessage />,
