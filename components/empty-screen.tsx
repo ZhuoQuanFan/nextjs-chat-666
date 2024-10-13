@@ -1,8 +1,8 @@
-import { UseChatHelpers } from 'ai/react'
+// import { UseChatHelpers } from 'ai/react'
 
-import { Button } from '@/components/ui/button'
+// import { Button } from '@/components/ui/button'
 import { ExternalLink } from '@/components/external-link'
-import { IconArrowRight } from '@/components/ui/icons'
+// import { IconArrowRight } from '@/components/ui/icons'
 
 export function EmptyScreen() {
   return (
@@ -28,7 +28,7 @@ export function EmptyScreen() {
           <ExternalLink href="https://jasonfzq.top">Jason's Blog</ExternalLink> and comment asap.
         </p>
         <p>
-          I have bought 1 dollar tokens for all users, you can register and try my AI chatbot. Feel free to ask me anything!
+          Remember, make tough choices when easier ones are available.
         </p>
       </div>
     </div>
